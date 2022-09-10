@@ -2,7 +2,7 @@ import axios from 'axios';
 import { getUserFromLocalStorage } from './localStorage';
 
 const api = axios.create({
-  baseURL: 'https://shielded-crag-79344.herokuapp.com',
+  baseURL: 'https://evening-reaches-97077.herokuapp.com',
 });
 
 api.interceptors.request.use((config) => {

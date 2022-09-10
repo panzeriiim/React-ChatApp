@@ -66,7 +66,7 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
   };
 
   useEffect(() => {
-    socket = io(process.env.REACT_APP_SOCKET_ENDPOINT);
+    socket = io('https://evening-reaches-97077.herokuapp.com/');
     socket.emit('setup', user);
 
     socket.on('connected', () => setSocketConnected(true));

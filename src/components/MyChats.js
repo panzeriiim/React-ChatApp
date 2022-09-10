@@ -15,16 +15,17 @@ const MyChats = ({ fetchAgain }) => {
 
   const { selectedChat, setSelectedChat, chats, setChats } = useAppContext();
 
-  useEffect(() => {
-    const fetchChats = async () => {
-      try {
-        const { data } = await api.get('/api/v1/chat');
+  const fetchChats = async () => {
+    try {
+      const { data } = await api.get('/api/v1/chat');
 
-        setChats(data);
-      } catch (error) {
-        toast.error(error);
-      }
-    };
+      setChats(data);
+    } catch (error) {
+      toast.error(error);
+    }
+  };
+
+  useEffect(() => {
     setLoggedUser(getUserFromLocalStorage('user'));
     fetchChats();
     // eslint-disable-next-line react-hooks/exhaustive-deps
